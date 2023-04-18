@@ -1,0 +1,32 @@
+{
+  "name": "xorx-swap",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/server": "^11.10.0",
+    "@mantine/core": "^6.0.7",
+    "@mantine/hooks": "^6.0.7",
+    "@mantine/modals": "^6.0.7",
+    "@mantine/next": "^6.0.7",
+    "@mantine/notifications": "^6.0.7",
+    "@types/node": "18.15.11",
+    "@types/react": "18.0.35",
+    "@types/react-dom": "18.0.11",
+    "eslint": "8.38.0",
+    "eslint-config-next": "13.3.0",
+    "ethers": "^5.7",
+    "next": "13.3.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tabler-icons-react": "^1.56.0",
+    "typescript": "5.0.4",
+    "wagmi": "^0.12.10"
+  }
+}
