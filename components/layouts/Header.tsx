@@ -1,3 +1,4 @@
+import React from "react";
 import Logo from "../elements/Logo";
 import ConnectButton from "../elements/ConnectButton";
 import NetworkMenu from "../elements/NetworkMenu";

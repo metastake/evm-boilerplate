@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import React, { FC, ReactNode } from "react";
 import { AppShell } from "@mantine/core";
 import NoSsr from "../NoSsr";
 import TheHeader from "./Header";

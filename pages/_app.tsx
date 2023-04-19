@@ -1,9 +1,5 @@
-import { useState } from "react";
-import {
-  MantineProvider,
-  ColorSchemeProvider,
-  ColorScheme,
-} from "@mantine/core";
+import React, { useState } from "react";
+import { MantineProvider, ColorSchemeProvider, ColorScheme } from "@mantine/core";
 import Head from "next/head";
 import Layout from "../components/layouts/Default";
 import Chains from "../components/Utils/Chains";
@@ -59,17 +55,10 @@ const App = (props: AppProps) => {
       <Head>
         <title>{`XOR eXchange | The Next Generation DEX Aggregator`}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link rel="shortcut icon" href="/favicon.png" />
+        <link rel="shortcut icon" href="/favicon.webp" />
       </Head>
-      <ColorSchemeProvider
-        colorScheme={colorScheme}
-        toggleColorScheme={toggleColorScheme}
-      >
-        <MantineProvider
-          withGlobalStyles
-          withNormalizeCSS
-          theme={{ colorScheme, fontFamily: inter.style.fontFamily }}
-        >
+      <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
+        <MantineProvider withGlobalStyles withNormalizeCSS theme={{ colorScheme, fontFamily: inter.style.fontFamily }}>
           <WagmiConfig client={client}>
             <Layout>
               <Component {...pageProps} />

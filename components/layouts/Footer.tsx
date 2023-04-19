@@ -1,4 +1,4 @@
-import { Footer, Group, Text } from "@mantine/core";
+import React, { Footer, Group, Text } from "@mantine/core";
 
 const TheFooter = () => {
   return (

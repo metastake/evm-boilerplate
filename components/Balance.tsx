@@ -1,3 +1,4 @@
+import React from "react";
 import Chains from "./Utils/Chains";
 import { Group, SimpleGrid } from "@mantine/core";
 import BalanceBlock from "./elements/BalanceBlock";
