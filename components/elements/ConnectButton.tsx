@@ -1,12 +1,6 @@
+import React from "react";
 import { Connector, useAccount, useConnect, useDisconnect } from "wagmi";
-import {
-  Anchor,
-  Button,
-  Menu,
-  Group,
-  Text,
-  useMantineColorScheme,
-} from "@mantine/core";
+import { Anchor, Button, Menu, Group, Text, useMantineColorScheme } from "@mantine/core";
 import { Power, Wallet, Sun, Moon, Search, PigMoney } from "tabler-icons-react";
 import Image from "next/image";
 import Chains from "../Utils/Chains";
@@ -84,18 +78,11 @@ const ConnectButton = () => {
         <Menu.Dropdown>
           <Menu.Label>Private zone</Menu.Label>
           <Menu.Item icon={<PigMoney />}>
-            <Anchor
-              underline={false}
-              color="DefaultMantineColor"
-              href="/balance"
-            >
+            <Anchor underline={false} color="DefaultMantineColor" href="/balance">
               Balance
             </Anchor>
           </Menu.Item>
-          <Menu.Item
-            onClick={() => toggleColorScheme()}
-            icon={colorScheme === "dark" ? <Sun /> : <Moon />}
-          >
+          <Menu.Item onClick={() => toggleColorScheme()} icon={colorScheme === "dark" ? <Sun /> : <Moon />}>
             Switch
           </Menu.Item>
           <Menu.Item onClick={() => disconnect()} icon={<Power />}>

@@ -1,15 +1,7 @@
+import React from "react";
 import { fetchBalance } from "@wagmi/core";
 import { useAccount } from "wagmi";
-import {
-  Paper,
-  Image,
-  Group,
-  Text,
-  Stack,
-  Badge,
-  Divider,
-  Loader,
-} from "@mantine/core";
+import { Paper, Image, Group, Text, Stack, Badge, Divider, Loader } from "@mantine/core";
 import { useEffect, useState } from "react";
 import { Address } from "wagmi";
 
@@ -41,12 +33,7 @@ const BalanceBlock = ({ network }: any) => {
       <Stack spacing="sm">
         <Group position="apart" spacing="xl">
           <Badge variant="dot">{chain.name as string}</Badge>
-          <Image
-            src={`/images/networks/${chain.network.split("-")[0]}.webp`}
-            height={20}
-            width={20}
-            alt={chain.name}
-          />
+          <Image src={`/images/networks/${chain.network.split("-")[0]}.webp`} height={20} width={20} alt={chain.name} />
         </Group>
 
         <Group position="apart" spacing="xl">
@@ -70,11 +57,7 @@ const BalanceBlock = ({ network }: any) => {
         <Divider my="sm" variant="dashed" />
 
         <Group position="apart" spacing="xl">
-          {isLoaded ? (
-            <Text fz="sm">{balance.slice(0, 12)}</Text>
-          ) : (
-            <Loader variant="dots" />
-          )}
+          {isLoaded ? <Text fz="sm">{balance.slice(0, 12)}</Text> : <Loader variant="dots" />}
           <Text fz="sm">{chain.nativeCurrency?.symbol}</Text>
         </Group>
       </Stack>

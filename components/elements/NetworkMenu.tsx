@@ -1,3 +1,4 @@
+import React from "react";
 import { Button, Menu } from "@mantine/core";
 import { useNetwork, useSwitchNetwork } from "wagmi";
 import { mainnet } from "@wagmi/chains";
