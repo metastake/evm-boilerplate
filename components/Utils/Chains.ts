@@ -16,18 +16,9 @@ import {
   bsc,
   bscTestnet,
   avalanche,
-  avalancheFuji
-} from "@wagmi/chains";
+  avalancheFuji,
+} from '@wagmi/chains'
 
-const Chains = [
-  mainnet,
-  optimismGoerli,
-  arbitrumGoerli,
-  zkSync,
-  polygon,
-  baseGoerli,
-  bsc,
-  avalanche,
-]
+const Chains = [mainnet, optimismGoerli, arbitrumGoerli, zkSync, polygon, baseGoerli, bsc, avalanche]
 
-export default Chains;
+export default Chains

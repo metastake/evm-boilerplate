@@ -1,8 +1,8 @@
-import React from "react";
-import { NextPage } from "next";
+import React from 'react'
+import { NextPage } from 'next'
 
 const home: NextPage = () => {
-  return <div></div>;
-};
+  return <div></div>
+}
 
-export default home;
+export default home

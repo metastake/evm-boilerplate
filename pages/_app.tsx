@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import { MantineProvider, ColorSchemeProvider, ColorScheme } from "@mantine/core";
-import Head from "next/head";
-import Layout from "../components/layouts/Default";
-import Chains from "../components/Utils/Chains";
-import { Inter } from "next/font/google";
-import { AppProps } from "next/app";
-import { WagmiConfig, createClient, configureChains } from "wagmi";
-import { infuraProvider } from "@wagmi/core/providers/infura";
-import { publicProvider } from "@wagmi/core/providers/public";
-import { CoinbaseWalletConnector } from "wagmi/connectors/coinbaseWallet";
-import { InjectedConnector } from "wagmi/connectors/injected";
-import { LedgerConnector } from "@wagmi/connectors/ledger";
+import React, { useState } from 'react'
+import { MantineProvider, ColorSchemeProvider, ColorScheme } from '@mantine/core'
+import Head from 'next/head'
+import Layout from '../components/layouts/Default'
+import Chains from '../components/Utils/Chains'
+import { Inter } from 'next/font/google'
+import { AppProps } from 'next/app'
+import { WagmiConfig, createClient, configureChains } from 'wagmi'
+import { infuraProvider } from '@wagmi/core/providers/infura'
+import { publicProvider } from '@wagmi/core/providers/public'
+import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
+import { InjectedConnector } from 'wagmi/connectors/injected'
+import { LedgerConnector } from '@wagmi/connectors/ledger'
 
 const { chains, provider } = configureChains(Chains, [
   infuraProvider({
@@ -18,7 +18,7 @@ const { chains, provider } = configureChains(Chains, [
     priority: 0,
   }),
   publicProvider({ priority: 1 }),
-]);
+])
 
 const client = createClient({
   autoConnect: true,
@@ -26,29 +26,29 @@ const client = createClient({
     new InjectedConnector({
       chains,
       options: {
-        name: "MetaMask",
+        name: 'MetaMask',
         shimDisconnect: true,
       },
     }),
     new CoinbaseWalletConnector({
       chains,
       options: {
-        appName: "wagmi",
+        appName: 'wagmi',
       },
     }),
     new LedgerConnector({ chains }),
   ],
   provider,
-});
+})
 
-const inter = Inter({ subsets: ["latin"], weight: "400" });
+const inter = Inter({ subsets: ['latin'], weight: '400' })
 
 const App = (props: AppProps) => {
-  const { Component, pageProps } = props;
+  const { Component, pageProps } = props
 
-  const [colorScheme, setColorScheme] = useState<ColorScheme>("dark");
+  const [colorScheme, setColorScheme] = useState<ColorScheme>('dark')
   const toggleColorScheme = (value?: ColorScheme) =>
-    setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"));
+    setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'))
 
   return (
     <>
@@ -67,7 +67,7 @@ const App = (props: AppProps) => {
         </MantineProvider>
       </ColorSchemeProvider>
     </>
-  );
-};
+  )
+}
 
-export default App;
+export default App

@@ -1,9 +1,9 @@
-import React from "react";
-import { NextPage } from "next";
-import Balance from "../components/Balance";
+import React from 'react'
+import { NextPage } from 'next'
+import Balance from '../components/Balance'
 
 const balance: NextPage = () => {
-  return <Balance />;
-};
+  return <Balance />
+}
 
-export default balance;
+export default balance

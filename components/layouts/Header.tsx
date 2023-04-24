@@ -1,9 +1,9 @@
-import React from "react";
-import Logo from "../elements/Logo";
-import ConnectButton from "../elements/ConnectButton";
-import NetworkMenu from "../elements/NetworkMenu";
-import { Header, Group, Text } from "@mantine/core";
-import Link from "next/link";
+import React from 'react'
+import Logo from '../elements/Logo'
+import ConnectButton from '../elements/ConnectButton'
+import NetworkMenu from '../elements/NetworkMenu'
+import { Header, Group, Text } from '@mantine/core'
+import Link from 'next/link'
 
 const TheHeader = () => {
   return (
@@ -22,7 +22,7 @@ const TheHeader = () => {
         </Group>
       </Group>
     </Header>
-  );
-};
+  )
+}
 
-export default TheHeader;
+export default TheHeader

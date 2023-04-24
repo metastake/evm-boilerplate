@@ -1,8 +1,8 @@
-import React, { FC, ReactNode } from "react";
-import { AppShell } from "@mantine/core";
-import NoSsr from "../NoSsr";
-import TheHeader from "./Header";
-import TheFooter from "./Footer";
+import React, { FC, ReactNode } from 'react'
+import { AppShell } from '@mantine/core'
+import NoSsr from '../NoSsr'
+import TheHeader from './Header'
+import TheFooter from './Footer'
 
 const Layout: FC<{ children: ReactNode }> = ({ children }) => {
   return (
@@ -11,7 +11,7 @@ const Layout: FC<{ children: ReactNode }> = ({ children }) => {
         {children}
       </AppShell>
     </NoSsr>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

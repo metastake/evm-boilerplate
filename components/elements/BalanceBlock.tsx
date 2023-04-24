@@ -1,16 +1,16 @@
-import React from "react";
-import { fetchBalance } from "@wagmi/core";
-import { useAccount } from "wagmi";
-import { Paper, Image, Group, Text, Stack, Badge, Divider, Loader } from "@mantine/core";
-import { useEffect, useState } from "react";
-import { Address } from "wagmi";
+import React from 'react'
+import { fetchBalance } from '@wagmi/core'
+import { useAccount } from 'wagmi'
+import { Paper, Image, Group, Text, Stack, Badge, Divider, Loader } from '@mantine/core'
+import { useEffect, useState } from 'react'
+import { Address } from 'wagmi'
 
 const BalanceBlock = ({ network }: any) => {
-  const [balance, setBalance] = useState("0");
-  const [chain, setChain] = useState(network);
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [balance, setBalance] = useState('0')
+  const [chain, setChain] = useState(network)
+  const [isLoaded, setIsLoaded] = useState(false)
 
-  const { address } = useAccount();
+  const { address } = useAccount()
 
   useEffect(() => {
     fetchBalance({
@@ -18,22 +18,22 @@ const BalanceBlock = ({ network }: any) => {
       chainId: chain.id,
     })
       .then((data) => {
-        setBalance(data.formatted);
-        setChain(network);
-        setIsLoaded(true);
+        setBalance(data.formatted)
+        setChain(network)
+        setIsLoaded(true)
       })
       .catch((e) => {
-        setIsLoaded(false);
-        console.log(e);
-      });
-  });
+        setIsLoaded(false)
+        console.log(e)
+      })
+  })
 
   return (
     <Paper shadow="md" p="sm" withBorder>
       <Stack spacing="sm">
         <Group position="apart" spacing="xl">
           <Badge variant="dot">{chain.name as string}</Badge>
-          <Image src={`/images/networks/${chain.network.split("-")[0]}.webp`} height={20} width={20} alt={chain.name} />
+          <Image src={`/images/networks/${chain.network.split('-')[0]}.webp`} height={20} width={20} alt={chain.name} />
         </Group>
 
         <Group position="apart" spacing="xl">
@@ -62,7 +62,7 @@ const BalanceBlock = ({ network }: any) => {
         </Group>
       </Stack>
     </Paper>
-  );
-};
+  )
+}
 
-export default BalanceBlock;
+export default BalanceBlock

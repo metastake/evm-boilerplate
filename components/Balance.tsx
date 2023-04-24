@@ -1,10 +1,10 @@
-import React from "react";
-import Chains from "./Utils/Chains";
-import { Group, SimpleGrid } from "@mantine/core";
-import BalanceBlock from "./elements/BalanceBlock";
+import React from 'react'
+import Chains from './Utils/Chains'
+import { Group, SimpleGrid } from '@mantine/core'
+import BalanceBlock from './elements/BalanceBlock'
 
 const Balance = () => {
-  const chains = Chains;
+  const chains = Chains
 
   return (
     <Group position="center" p="xl">
@@ -14,7 +14,7 @@ const Balance = () => {
         ))}
       </SimpleGrid>
     </Group>
-  );
-};
+  )
+}
 
-export default Balance;
+export default Balance

@@ -1,15 +1,15 @@
-import React from "react";
-import { Connector, useAccount, useConnect, useDisconnect } from "wagmi";
-import { Anchor, Button, Menu, Group, Text, useMantineColorScheme } from "@mantine/core";
-import { Power, Wallet, Sun, Moon, Search, PigMoney } from "tabler-icons-react";
-import Image from "next/image";
-import Chains from "../Utils/Chains";
+import React from 'react'
+import { Connector, useAccount, useConnect, useDisconnect } from 'wagmi'
+import { Anchor, Button, Menu, Group, Text, useMantineColorScheme } from '@mantine/core'
+import { Power, Wallet, Sun, Moon, Search, PigMoney } from 'tabler-icons-react'
+import Image from 'next/image'
+import Chains from '../Utils/Chains'
 
 const ConnectIcon = (connector: Connector) => {
-  const [height, width] = [36, 36];
+  const [height, width] = [36, 36]
 
   switch (connector.id) {
-    case "walletConnect":
+    case 'walletConnect':
       return (
         <Image
           src="images/walletConnectors/walletconnect.svg"
@@ -17,8 +17,8 @@ const ConnectIcon = (connector: Connector) => {
           width={width}
           alt="TrustWallet, Exodus ..."
         />
-      );
-    case "injected":
+      )
+    case 'injected':
       return (
         <Image
           src="images/walletConnectors/metamask.svg"
@@ -26,8 +26,8 @@ const ConnectIcon = (connector: Connector) => {
           width={width}
           alt="Metmask, CoinBase, Brave ..."
         />
-      );
-    case "ledger":
+      )
+    case 'ledger':
       return (
         <Image
           src="images/walletConnectors/ledger-square.svg"
@@ -35,8 +35,8 @@ const ConnectIcon = (connector: Connector) => {
           width={width}
           alt="Metmask, CoinBase, Brave ..."
         />
-      );
-    case "coinbaseWallet":
+      )
+    case 'coinbaseWallet':
       return (
         <Image
           src="images/walletConnectors/coinbasewallet.svg"
@@ -44,27 +44,27 @@ const ConnectIcon = (connector: Connector) => {
           width={width}
           alt="Metmask, CoinBase, Brave ..."
         />
-      );
+      )
   }
-};
+}
 
 const ConnectButton = () => {
-  const { address, isConnected } = useAccount();
-  const { connect, connectors } = useConnect();
+  const { address, isConnected } = useAccount()
+  const { connect, connectors } = useConnect()
   const { disconnect } = useDisconnect({
     onError(error) {
-      console.log("Error", error);
+      console.log('Error', error)
     },
     onSettled(data, error) {
-      console.log("Settled", { data, error });
+      console.log('Settled', { data, error })
     },
     onSuccess(data) {
-      console.log("Success", data);
+      console.log('Success', data)
     },
-  });
-  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+  })
+  const { colorScheme, toggleColorScheme } = useMantineColorScheme()
 
-  const chains = Chains;
+  const chains = Chains
 
   if (isConnected) {
     return (
@@ -82,7 +82,7 @@ const ConnectButton = () => {
               Balance
             </Anchor>
           </Menu.Item>
-          <Menu.Item onClick={() => toggleColorScheme()} icon={colorScheme === "dark" ? <Sun /> : <Moon />}>
+          <Menu.Item onClick={() => toggleColorScheme()} icon={colorScheme === 'dark' ? <Sun /> : <Moon />}>
             Switch
           </Menu.Item>
           <Menu.Item onClick={() => disconnect()} icon={<Power />}>
@@ -101,7 +101,7 @@ const ConnectButton = () => {
             <Menu.Item
               icon={
                 <Image
-                  src={`/images/networks/${network.network.split("-")[0]}.webp`}
+                  src={`/images/networks/${network.network.split('-')[0]}.webp`}
                   height={20}
                   width={20}
                   alt={network.blockExplorers.default.name}
@@ -115,13 +115,13 @@ const ConnectButton = () => {
                 underline={false}
                 color="DefaultMantineColor"
               >
-                {network.blockExplorers.default.name}{" "}
+                {network.blockExplorers.default.name}{' '}
               </Anchor>
             </Menu.Item>
           ))}
         </Menu.Dropdown>
       </Menu>
-    );
+    )
   }
 
   return (
@@ -143,7 +143,7 @@ const ConnectButton = () => {
         ))}
       </Menu.Dropdown>
     </Menu>
-  );
-};
+  )
+}
 
-export default ConnectButton;
+export default ConnectButton
